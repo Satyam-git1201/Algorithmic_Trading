@@ -30,7 +30,7 @@ def Renko_data(data):
     df = df.iloc[:, [0,1,2,3,5,6]]
     df.columns=['date', 'open', 'high', 'low', 'close', 'volume']
     renko_df = Renko(df)
-    renko_df.brick_size=round(ATR(ohlcv, 120)['ATR'][-1], 0)
+    renko_df.brick_size=round(ATR(df, 120)['ATR'][-1], 0)
     dfr = renko_df.get_ohlc_data()
     return dfr
 
