@@ -99,7 +99,8 @@ def Renko_data(data):
 
 #getting the data for selected tickers
 tickers = ["MSFT","AAPL","FB","AMZN","INTC", "CSCO","IBM"]        
-ts = TimeSeries(key='WE8WV4LYOKN8CXRM', output_format='pandas')
+key_path = "C:\\Users\\kumar\\Documents\\alphavantageKey.txt"
+ts = TimeSeries(key=open(key_path,'r').read(), output_format='pandas')
 
 ohlc_intraday = {} # directory with ohlc value for each stock   
 api_call_count = 1

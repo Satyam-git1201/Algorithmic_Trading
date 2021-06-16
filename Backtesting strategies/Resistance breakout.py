@@ -58,7 +58,8 @@ tickers = ["MSFT","AAPL","FB","AMZN","INTC", "CSCO","VZ","IBM","TSLA","AMD"]
 
 ohlc_intraday = {} # directory with ohlc value for each stock   
 api_call_count = 1
-ts = TimeSeries(key='WE8WV4LYOKN8CXRM', output_format='pandas')
+key_path = "C:\\Users\\kumar\\Documents\\alphavantageKey.txt"
+ts = TimeSeries(key=open(key_path,'r').read(), output_format='pandas')
 start_time = time.time()
 for ticker in tickers:
     data = ts.get_intraday(symbol=ticker,interval='5min', outputsize='full')[0]
